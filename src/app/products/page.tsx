@@ -130,7 +130,7 @@ export default function ProductsPage() {
           <div>
             <h1 className="text-3xl font-bold text-gray-900">
               {brandParam 
-                ? `${brandNames[brandParam] || brandParam}の${categoryNames[categoryParam] || '商品'}`
+                ? `${brandNames[brandParam] || brandParam}の${categoryParam ? (categoryNames[categoryParam] || '商品') : '商品'}`
                 : categoryParam 
                 ? `${categoryNames[categoryParam] || categoryParam}の商品`
                 : 'すべての商品'}
