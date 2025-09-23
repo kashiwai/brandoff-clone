@@ -24,9 +24,9 @@ export async function GET(request: NextRequest) {
           { active: true },
           {
             OR: [
-              { name: { contains: searchTerm, mode: 'insensitive' } },
-              { description: { contains: searchTerm, mode: 'insensitive' } },
-              { sku: { contains: searchTerm, mode: 'insensitive' } },
+              { name: { contains: searchTerm } },
+              { description: { contains: searchTerm } },
+              { sku: { contains: searchTerm } },
             ],
           },
         ],
@@ -54,8 +54,8 @@ export async function GET(request: NextRequest) {
     const categories = await prisma.category.findMany({
       where: {
         OR: [
-          { name: { contains: searchTerm, mode: 'insensitive' } },
-          { description: { contains: searchTerm, mode: 'insensitive' } },
+          { name: { contains: searchTerm } },
+          { description: { contains: searchTerm } },
         ],
       },
       take: 5,
