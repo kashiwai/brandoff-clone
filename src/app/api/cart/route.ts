@@ -183,7 +183,7 @@ export async function POST(request: NextRequest) {
 
     const subtotal = updatedCart!.items.reduce((sum, item) => {
       const price = item.variant?.price || item.product.price
-      return sum + (price.toNumber() * item.quantity)
+      return sum + (Number(price) * item.quantity)
     }, 0)
 
     const totalItems = updatedCart!.items.reduce((sum, item) => sum + item.quantity, 0)
@@ -272,7 +272,7 @@ export async function PUT(request: NextRequest) {
 
     const subtotal = updatedCart!.items.reduce((sum, item) => {
       const price = item.variant?.price || item.product.price
-      return sum + (price.toNumber() * item.quantity)
+      return sum + (Number(price) * item.quantity)
     }, 0)
 
     const totalItems = updatedCart!.items.reduce((sum, item) => sum + item.quantity, 0)
