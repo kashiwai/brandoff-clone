@@ -48,7 +48,10 @@ export default function ProductCard({ product, className = '' }: ProductCardProp
     try {
       await addItem({
         productId: product.id,
+        name: product.name,
+        price: Number(product.price),
         quantity: 1,
+        image: product.images?.[0]?.url || 'https://via.placeholder.com/400x400',
       })
     } catch (error) {
       console.error('Failed to add to cart:', error)
