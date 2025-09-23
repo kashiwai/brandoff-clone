@@ -32,7 +32,7 @@ interface CartActions {
 type CartStore = CartState & CartActions
 
 const createCartStore = () => {
-  const store = (set: any, get: any) => ({
+  const store = (set: any, get: any): CartStore => ({
     items: [],
     isOpen: false,
 
@@ -96,7 +96,7 @@ const createCartStore = () => {
   }
 
   return create<CartStore>()(
-    persist(
+    persist<CartStore>(
       store,
       {
         name: 'cart-storage',
