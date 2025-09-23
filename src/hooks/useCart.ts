@@ -32,8 +32,9 @@ interface CartActions {
 type CartStore = CartState & CartActions
 
 const useCartStore = create<CartStore>()(
-  persist(
-    (set, get) => ({
+  typeof window !== 'undefined'
+    ? persist(
+        (set, get) => ({
       items: [],
       isOpen: false,
 
@@ -91,12 +92,70 @@ const useCartStore = create<CartStore>()(
         const state = get()
         return state.items.reduce((total, item) => total + (item.price * item.quantity), 0)
       },
-    }),
-    {
-      name: 'cart-storage',
-      skipHydration: true,
-    }
-  )
+        }),
+        {
+          name: 'cart-storage',
+          skipHydration: true,
+        }
+      )
+    : (set, get) => ({
+        items: [],
+        isOpen: false,
+
+        addItem: (newItem) => {
+          set((state) => {
+            const existingItemIndex = state.items.findIndex(
+              item => item.productId === newItem.productId
+            )
+
+            if (existingItemIndex > -1) {
+              const updatedItems = [...state.items]
+              updatedItems[existingItemIndex].quantity += newItem.quantity
+              return { items: updatedItems }
+            } else {
+              return { items: [...state.items, newItem] }
+            }
+          })
+        },
+
+        removeItem: (productId) => {
+          set((state) => ({
+            items: state.items.filter(item => item.productId !== productId)
+          }))
+        },
+
+        updateQuantity: (productId, quantity) => {
+          if (quantity <= 0) {
+            set((state) => ({
+              items: state.items.filter(item => item.productId !== productId)
+            }))
+          } else {
+            set((state) => ({
+              items: state.items.map(item =>
+                item.productId === productId
+                  ? { ...item, quantity }
+                  : item
+              )
+            }))
+          }
+        },
+
+        clearCart: () => set({ items: [] }),
+
+        openCart: () => set({ isOpen: true }),
+        closeCart: () => set({ isOpen: false }),
+        toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
+
+        getTotalItems: () => {
+          const state = get()
+          return state.items.reduce((total, item) => total + item.quantity, 0)
+        },
+
+        getSubtotal: () => {
+          const state = get()
+          return state.items.reduce((total, item) => total + (item.price * item.quantity), 0)
+        },
+      })
 )
 
 export const useCart = () => {
@@ -104,7 +163,7 @@ export const useCart = () => {
   const store = useCartStore()
 
   useEffect(() => {
-    if (!isHydrated) {
+    if (!isHydrated && typeof window !== 'undefined' && useCartStore.persist) {
       useCartStore.persist.rehydrate()
       setIsHydrated(true)
     }
