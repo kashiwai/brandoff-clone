@@ -66,7 +66,7 @@ export async function GET(request: NextRequest) {
       id: product.id,
       name: product.name,
       slug: product.slug,
-      price: product.price.toNumber(),
+      price: Number(product.price),
       image: product.images[0]?.url,
       category: product.category.name,
     }))
