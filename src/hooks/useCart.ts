@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
@@ -93,10 +94,21 @@ const useCartStore = create<CartStore>()(
     }),
     {
       name: 'cart-storage',
+      skipHydration: true,
     }
   )
 )
 
 export const useCart = () => {
-  return useCartStore()
+  const [isHydrated, setIsHydrated] = useState(false)
+  const store = useCartStore()
+
+  useEffect(() => {
+    if (!isHydrated) {
+      useCartStore.persist.rehydrate()
+      setIsHydrated(true)
+    }
+  }, [])
+
+  return store
 }
