@@ -58,7 +58,7 @@ export async function GET(request: NextRequest) {
     // Calculate totals
     const subtotal = cart.items.reduce((sum, item) => {
       const price = item.variant?.price || item.product.price
-      return sum + (price.toNumber() * item.quantity)
+      return sum + (Number(price) * item.quantity)
     }, 0)
 
     const totalItems = cart.items.reduce((sum, item) => sum + item.quantity, 0)
