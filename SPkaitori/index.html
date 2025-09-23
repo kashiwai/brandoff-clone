@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fancy 買取 - スマホ・タブレット買取ランク</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Fancy 買取</h1>
+                <p>スマホ・タブレット買取</p>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#ranking">買取ランク</a></li>
+                    <li><a href="#search">価格検索</a></li>
+                    <li><a href="#guide">買取ガイド</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>スマホ・タブレット買取ランク表</h2>
+                <p>お持ちの端末の状態から買取価格をご確認いただけます</p>
+                <div class="hero-badges">
+                    <div class="hero-badge">
+                        <i>✓</i>
+                        <span>最短即日査定</span>
+                    </div>
+                    <div class="hero-badge">
+                        <i>✓</i>
+                        <span>業界最高水準</span>
+                    </div>
+                    <div class="hero-badge">
+                        <i>✓</i>
+                        <span>データ完全消去</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ranking" class="ranking-section">
+            <div class="container">
+                <h2>買取ランク基準</h2>
+                <div class="rank-grid">
+                    <div class="rank-card rank-a">
+                        <div class="rank-header">
+                            <span class="rank-badge">ランク A</span>
+                            <h3>新品同様</h3>
+                        </div>
+                        <div class="rank-content">
+                            <!-- 画像スライダー追加 -->
+                            <div class="image-slider">
+                                <div class="slider-container">
+                                    <button class="slider-btn prev" data-rank="a">‹</button>
+                                    <div class="slider-images">
+                                        <img src="smphoto/a-1.png" alt="ランクA 前面" class="slider-image active clickable-image">
+                                        <img src="smphoto/a-2.png" alt="ランクA 背面" class="slider-image clickable-image">
+                                        <img src="smphoto/a1.png" alt="ランクA 詳細1" class="slider-image clickable-image">
+                                        <img src="smphoto/a-1.png" alt="ランクA 詳細2" class="slider-image clickable-image">
+                                    </div>
+                                    <button class="slider-btn next" data-rank="a">›</button>
+                                </div>
+                                <div class="slider-dots">
+                                    <span class="dot active" data-slide="0"></span>
+                                    <span class="dot" data-slide="1"></span>
+                                    <span class="dot" data-slide="2"></span>
+                                    <span class="dot" data-slide="3"></span>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>未使用または使用感がほぼない</li>
+                                <li>傷・汚れなし</li>
+                                <li>動作完全正常</li>
+                                <li>付属品完備</li>
+                            </ul>
+                            <div class="price-indicator">
+                                <span>買取価格</span>
+                                <strong>最高額</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rank-card rank-b">
+                        <div class="rank-header">
+                            <span class="rank-badge">ランク B</span>
+                            <h3>良品</h3>
+                        </div>
+                        <div class="rank-content">
+                            <!-- 画像スライダー追加 -->
+                            <div class="image-slider">
+                                <div class="slider-container">
+                                    <button class="slider-btn prev" data-rank="b">‹</button>
+                                    <div class="slider-images" data-rank="b">
+                                        <img src="smphoto/b-1.png" alt="ランクB 前面" class="slider-image active clickable-image">
+                                        <img src="smphoto/b-2.png" alt="ランクB 背面" class="slider-image clickable-image">
+                                        <img src="smphoto/b-3.png" alt="ランクB 詳細1" class="slider-image clickable-image">
+                                        <img src="smphoto/b-4.png" alt="ランクB 詳細2" class="slider-image clickable-image">
+                                    </div>
+                                    <button class="slider-btn next" data-rank="b">›</button>
+                                </div>
+                                <div class="slider-dots" data-rank="b">
+                                    <span class="dot active" data-slide="0"></span>
+                                    <span class="dot" data-slide="1"></span>
+                                    <span class="dot" data-slide="2"></span>
+                                    <span class="dot" data-slide="3"></span>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>使用感はあるが状態良好</li>
+                                <li>軽微な傷あり</li>
+                                <li>動作正常</li>
+                                <li>主要付属品あり</li>
+                            </ul>
+                            <div class="price-indicator">
+                                <span>買取価格</span>
+                                <strong>高額</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rank-card rank-c">
+                        <div class="rank-header">
+                            <span class="rank-badge">ランク C</span>
+                            <h3>通常品</h3>
+                        </div>
+                        <div class="rank-content">
+                            <!-- 画像スライダー追加 -->
+                            <div class="image-slider">
+                                <div class="slider-container">
+                                    <button class="slider-btn prev" data-rank="c">‹</button>
+                                    <div class="slider-images" data-rank="c">
+                                        <img src="smphoto/c-1.png" alt="ランクC 前面" class="slider-image active clickable-image">
+                                        <img src="smphoto/c-2.png" alt="ランクC 背面" class="slider-image clickable-image">
+                                        <img src="smphoto/c-3.png" alt="ランクC 詳細1" class="slider-image clickable-image">
+                                        <img src="smphoto/c-4.png" alt="ランクC 詳細2" class="slider-image clickable-image">
+                                    </div>
+                                    <button class="slider-btn next" data-rank="c">›</button>
+                                </div>
+                                <div class="slider-dots" data-rank="c">
+                                    <span class="dot active" data-slide="0"></span>
+                                    <span class="dot" data-slide="1"></span>
+                                    <span class="dot" data-slide="2"></span>
+                                    <span class="dot" data-slide="3"></span>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>通常使用による傷・汚れあり</li>
+                                <li>画面に軽微な傷</li>
+                                <li>動作に問題なし</li>
+                                <li>本体のみ</li>
+                            </ul>
+                            <div class="price-indicator">
+                                <span>買取価格</span>
+                                <strong>標準</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rank-card rank-d">
+                        <div class="rank-header">
+                            <span class="rank-badge">ランク D</span>
+                            <h3>難あり品</h3>
+                        </div>
+                        <div class="rank-content">
+                            <ul>
+                                <li>目立つ傷・破損あり</li>
+                                <li>画面割れ・ヒビあり</li>
+                                <li>一部機能に不具合</li>
+                                <li>ジャンク扱い</li>
+                            </ul>
+                            <div class="price-indicator">
+                                <span>買取価格</span>
+                                <strong>要査定</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 査定例セクション -->
+        <section id="rank-examples" class="rank-examples-section">
+            <div class="container">
+                <h2>各ランクの査定例</h2>
+                <p class="section-description">実際の端末状態を画像でご確認いただけます</p>
+                
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="example-header">
+                            <span class="rank-label rank-a">ランク A</span>
+                            <h3>新品同様の状態</h3>
+                        </div>
+                        <div class="example-images">
+                            <div class="device-showcase">
+                                <img src="smphoto/a-1.png" alt="ランクA 前面" class="device-image">
+                                <img src="smphoto/a-2.png" alt="ランクA 背面" class="device-image">
+                            </div>
+                            <div class="example-details">
+                                <h4>ランクAの特徴</h4>
+                                <ul>
+                                    <li>画面に傷や汚れが一切ない</li>
+                                    <li>本体にキズや凹みがない</li>
+                                    <li>バッテリー性能90%以上</li>
+                                    <li>全機能正常動作</li>
+                                </ul>
+                                <button class="view-more-btn" data-rank="a">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="example-header">
+                            <span class="rank-label rank-b">ランク B</span>
+                            <h3>良品の状態</h3>
+                        </div>
+                        <div class="example-images">
+                            <div class="device-showcase">
+                                <img src="smphoto/b-1.png" alt="ランクB 前面" class="device-image">
+                                <img src="smphoto/b-2.png" alt="ランクB 背面" class="device-image">
+                            </div>
+                            <div class="example-details">
+                                <h4>ランクBの特徴</h4>
+                                <ul>
+                                    <li>画面に微細な傷がある</li>
+                                    <li>本体に軽微な使用感</li>
+                                    <li>バッテリー性能80%以上</li>
+                                    <li>全機能正常動作</li>
+                                </ul>
+                                <button class="view-more-btn" data-rank="b">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="example-header">
+                            <span class="rank-label rank-c">ランク C</span>
+                            <h3>通常使用品</h3>
+                        </div>
+                        <div class="example-images">
+                            <div class="device-showcase">
+                                <img src="smphoto/c-1.png" alt="ランクC 前面" class="device-image">
+                                <img src="smphoto/c-2.png" alt="ランクC 背面" class="device-image">
+                            </div>
+                            <div class="example-details">
+                                <h4>ランクCの特徴</h4>
+                                <ul>
+                                    <li>画面に目立つ傷がある</li>
+                                    <li>本体に使用感・傷あり</li>
+                                    <li>バッテリー性能70%以上</li>
+                                    <li>基本機能は正常動作</li>
+                                </ul>
+                                <button class="view-more-btn" data-rank="c">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="example-header">
+                            <span class="rank-label rank-d">ランク D</span>
+                            <h3>難あり品</h3>
+                        </div>
+                        <div class="example-images">
+                            <div class="device-showcase">
+                                <img src="smphoto/d-1.png" alt="ランクD 前面" class="device-image">
+                                <img src="smphoto/d-2.png" alt="ランクD 背面" class="device-image">
+                            </div>
+                            <div class="example-details">
+                                <h4>ランクDの特徴</h4>
+                                <ul>
+                                    <li>画面割れ・ヒビあり</li>
+                                    <li>本体に大きな損傷</li>
+                                    <li>一部機能に不具合</li>
+                                    <li>パーツ取りとしての価値</li>
+                                </ul>
+                                <button class="view-more-btn" data-rank="d">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 画像ポップアップモーダル -->
+        <div id="image-popup" class="image-modal">
+            <div class="image-modal-content">
+                <span class="image-close">&times;</span>
+                <img id="popup-image" src="" alt="">
+                <div class="image-info">
+                    <p id="image-caption"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- モーダルウィンドウ -->
+        <div id="rank-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-body">
+                    <!-- 動的にコンテンツが挿入されます -->
+                </div>
+            </div>
+        </div>
+
+        <section id="search" class="search-section">
+            <div class="container">
+                <h2>買取価格検索</h2>
+                <div class="search-box">
+                    <div class="search-filters">
+                        <select id="carrier" class="filter-select">
+                            <option value="">キャリア選択</option>
+                            <option value="docomo">ドコモ</option>
+                            <option value="au">au</option>
+                            <option value="softbank">ソフトバンク</option>
+                            <option value="simfree">SIMフリー</option>
+                        </select>
+                        <select id="device-type" class="filter-select">
+                            <option value="">端末種別</option>
+                            <option value="iphone">iPhone</option>
+                            <option value="android">Android</option>
+                            <option value="tablet">タブレット</option>
+                        </select>
+                        <input type="text" id="model-search" placeholder="モデル名を入力" class="search-input">
+                        <button class="search-btn">検索</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 付属品・SIMロック解除セクション -->
+        <section id="info-banners" class="info-banners-section">
+            <div class="container">
+                <div class="banners-grid">
+                    <!-- 付属品バナー -->
+                    <div class="info-banner accessories-banner">
+                        <div class="banner-image">
+                            <img src="smphoto/b-4.png" alt="付属品について">
+                        </div>
+                        <div class="banner-content">
+                            <h3>付属品について</h3>
+                            <div class="banner-text">
+                                <p class="highlight">付属品がなくても減額はありません。<br>本体のみでお送りください。</p>
+                                <div class="notice">
+                                    <p>付属品や箱などお送り頂きましてもプラスの査定はございません。</p>
+                                    <p class="warning">付属品のみの返却は行っておりませんのでご注意ください。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SIMロック解除バナー -->
+                    <div class="info-banner sim-unlock-banner">
+                        <div class="banner-image">
+                            <img src="smphoto/sim-unlock-banner.png" alt="SIMロック解除">
+                        </div>
+                        <div class="banner-content">
+                            <h3>SIMロック解除について</h3>
+                            <p class="banner-subtitle">ほんの一手間で買取金額がアップ！</p>
+                            <div class="banner-text">
+                                <p>もちろん解除していなくてもお売りいただけます。</p>
+                                <div class="sim-explanation">
+                                    <h4>SIMロック解除と買取について</h4>
+                                    <p>お売りする対象のスマホ・タブレットを、キャリア（docomo、au、SoftBank、Y!mobileなど）にて<br>
+                                    SIMロック解除してからお売りしていただくと買取金額がアップ！<br>
+                                    ぜひこの機会にこの一手間で、高くお売りください！</p>
+                                    <p class="note">※ 増額金額は機種により異なります。各機種の買取価格表示ページよりご確認ください。</p>
+                                </div>
+                                
+                                <!-- 比較例 -->
+                                <div class="sim-comparison">
+                                    <div class="comparison-item locked">
+                                        <h5>SIMロック解除していない場合</h5>
+                                        <div class="device-info">
+                                            <span class="carrier">docomo</span>
+                                            <p class="model">iPhone8 64GB</p>
+                                            <p class="price">上限買取価格<span>6,000円</span></p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="comparison-arrow">➜</div>
+                                    
+                                    <div class="comparison-item unlocked">
+                                        <h5>SIMロック解除済みの場合</h5>
+                                        <div class="device-info">
+                                            <span class="carrier sim-free">SIMロック解除済み</span>
+                                            <p class="model">iPhone8 64GB</p>
+                                            <p class="price">上限買取価格<span class="higher">8,000円</span></p>
+                                        </div>
+                                        <p class="price-up">2,000円UP!</p>
+                                    </div>
+                                </div>
+                                
+                                <p class="cta">SIMロック解除すると金額アップ！<br>各機種のSIMフリー価格にてお申込みください。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <h2>買取の流れ</h2>
+                <div class="guide-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>査定申込</h3>
+                        <p>オンラインまたは店頭で査定をお申し込みください</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>端末確認</h3>
+                        <p>専門スタッフが端末の状態を詳しく確認します</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>査定結果</h3>
+                        <p>ランクに基づいた買取価格をご提示します</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>お支払い</h3>
+                        <p>ご了承いただければ即日現金でお支払いします</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Fancy 買取の特徴</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3>透明な査定基準</h3>
+                        <p>明確なランク分けで安心の査定</p>
+                    </div>
+                    <div class="feature">
+                        <h3>即日現金化</h3>
+                        <p>査定後すぐに現金でお支払い</p>
+                    </div>
+                    <div class="feature">
+                        <h3>データ完全消去</h3>
+                        <p>お客様の個人情報を確実に保護</p>
+                    </div>
+                    <div class="feature">
+                        <h3>全国対応</h3>
+                        <p>宅配買取で全国どこでも対応</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Fancy 買取</h4>
+                    <p>スマホ・タブレット高価買取</p>
+                </div>
+                <div class="footer-section">
+                    <h4>サービス</h4>
+                    <ul>
+                        <li><a href="#ranking">買取ランク</a></li>
+                        <li><a href="#search">価格検索</a></li>
+                        <li><a href="#guide">買取ガイド</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>お問い合わせ</h4>
+                    <p>TEL: 0120-XXX-XXX</p>
+                    <p>営業時間: 10:00-19:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Fancy 買取. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

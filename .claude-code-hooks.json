@@ -1,0 +1,56 @@
+{
+  "hooks": {
+    "pre-commit": {
+      "enabled": true,
+      "commands": [
+        "npm run lint",
+        "npm run build"
+      ]
+    },
+    "post-save": {
+      "enabled": true,
+      "commands": [
+        "npm run typecheck"
+      ],
+      "filePatterns": ["*.ts", "*.tsx"]
+    },
+    "pre-build": {
+      "enabled": true,
+      "commands": [
+        "prisma generate",
+        "prisma db push"
+      ]
+    },
+    "auto-test": {
+      "enabled": true,
+      "commands": [
+        "npm test"
+      ],
+      "watch": true
+    },
+    "auto-format": {
+      "enabled": true,
+      "commands": [
+        "prettier --write ."
+      ],
+      "filePatterns": ["*.ts", "*.tsx", "*.js", "*.jsx", "*.css", "*.json"]
+    }
+  },
+  "automation": {
+    "developmentMode": true,
+    "autoReload": true,
+    "autoFixErrors": true,
+    "runOnChange": {
+      "enabled": true,
+      "debounce": 1000,
+      "commands": [
+        "npm run dev"
+      ]
+    }
+  },
+  "errorHandling": {
+    "autoFix": true,
+    "suggestions": true,
+    "logLevel": "verbose"
+  }
+}
