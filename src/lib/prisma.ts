@@ -1,24 +1,33 @@
 import { PrismaClient } from '@prisma/client'
-import { PrismaLibSQL } from '@prisma/adapter-libsql'
-import { createClient } from '@libsql/client'
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined
 }
 
-// Turso client setup
-const libsql = createClient({
-  url: process.env.TURSO_DATABASE_URL || process.env.DATABASE_URL || 'file:./dev.db',
-  authToken: process.env.TURSO_AUTH_TOKEN || undefined,
-})
+let prismaClient: PrismaClient
 
-const adapter = new PrismaLibSQL(libsql)
+// Only use Turso adapter in server-side environment
+if (typeof window === 'undefined' && process.env.TURSO_DATABASE_URL) {
+  const { PrismaLibSQL } = require('@prisma/adapter-libsql')
+  const { createClient } = require('@libsql/client')
 
-export const prisma =
-  globalForPrisma.prisma ??
-  new PrismaClient({
-    adapter: process.env.TURSO_DATABASE_URL ? adapter : undefined,
+  const libsql = createClient({
+    url: process.env.TURSO_DATABASE_URL,
+    authToken: process.env.TURSO_AUTH_TOKEN || undefined,
+  })
+
+  const adapter = new PrismaLibSQL(libsql)
+
+  prismaClient = new PrismaClient({
+    adapter,
     log: process.env.NODE_ENV === 'development' ? ['query'] : [],
   })
+} else {
+  prismaClient = new PrismaClient({
+    log: process.env.NODE_ENV === 'development' ? ['query'] : [],
+  })
+}
+
+export const prisma = globalForPrisma.prisma ?? prismaClient
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
