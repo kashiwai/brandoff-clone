@@ -41,7 +41,7 @@ export default function Header() {
                 onMouseLeave={() => setIsCategoryOpen(false)}
                 className="flex items-center text-sm uppercase tracking-wider text-gray-700 hover:text-black transition-colors"
               >
-                カテゴリー
+                コレクション
                 <FiChevronDown className="ml-1 w-4 h-4" />
               </button>
               
@@ -52,10 +52,10 @@ export default function Header() {
                   className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2"
                 >
                   <Link
-                    href="/categories"
+                    href="/collections"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
-                    すべてのカテゴリー
+                    すべてのコレクション
                   </Link>
                   <div className="border-t my-2"></div>
                   {categories.map((category) => (
@@ -125,11 +125,11 @@ export default function Header() {
         <nav className="md:hidden bg-white border-t border-gray-200 max-h-[70vh] overflow-y-auto">
           <div className="container mx-auto px-4 py-4 space-y-2">
             <Link
-              href="/categories"
+              href="/collections"
               className="block py-2 text-gray-700 hover:text-gray-900 font-semibold"
               onClick={() => setIsMenuOpen(false)}
             >
-              カテゴリーから探す
+              コレクションから探す
             </Link>
             
             {/* カテゴリー一覧 */}

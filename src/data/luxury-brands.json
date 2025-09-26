@@ -1,0 +1,265 @@
+{
+  "brands": [
+    {
+      "name": "LOUIS VUITTON",
+      "slug": "louis-vuitton",
+      "description": "1854年創業のフランスの高級ファッションブランド",
+      "country": "France",
+      "categories": ["バッグ", "財布", "アクセサリー", "シューズ", "ウェア"],
+      "popularProducts": [
+        {
+          "name": "Neverfull MM",
+          "category": "トートバッグ",
+          "priceRange": "¥250,000 - ¥300,000"
+        },
+        {
+          "name": "Speedy 30",
+          "category": "ハンドバッグ",
+          "priceRange": "¥150,000 - ¥200,000"
+        },
+        {
+          "name": "Alma BB",
+          "category": "ハンドバッグ",
+          "priceRange": "¥200,000 - ¥250,000"
+        }
+      ]
+    },
+    {
+      "name": "HERMÈS",
+      "slug": "hermes",
+      "description": "1837年創業のフランスの最高級ブランド",
+      "country": "France",
+      "categories": ["バッグ", "スカーフ", "ベルト", "財布", "時計"],
+      "popularProducts": [
+        {
+          "name": "Birkin 30",
+          "category": "ハンドバッグ",
+          "priceRange": "¥1,500,000 - ¥3,000,000"
+        },
+        {
+          "name": "Kelly 28",
+          "category": "ハンドバッグ",
+          "priceRange": "¥1,200,000 - ¥2,500,000"
+        },
+        {
+          "name": "Constance 24",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥800,000 - ¥1,500,000"
+        }
+      ]
+    },
+    {
+      "name": "CHANEL",
+      "slug": "chanel",
+      "description": "1910年創業のフランスのラグジュアリーブランド",
+      "country": "France",
+      "categories": ["バッグ", "ジュエリー", "コスメ", "ウェア"],
+      "popularProducts": [
+        {
+          "name": "Classic Flap Bag Medium",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥800,000 - ¥1,200,000"
+        },
+        {
+          "name": "Boy Chanel",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥600,000 - ¥800,000"
+        },
+        {
+          "name": "2.55 Reissue",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥700,000 - ¥900,000"
+        }
+      ]
+    },
+    {
+      "name": "GUCCI",
+      "slug": "gucci",
+      "description": "1921年創業のイタリアの高級ファッションブランド",
+      "country": "Italy",
+      "categories": ["バッグ", "財布", "ベルト", "シューズ", "アクセサリー"],
+      "popularProducts": [
+        {
+          "name": "GG Marmont",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥200,000 - ¥300,000"
+        },
+        {
+          "name": "Dionysus",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥250,000 - ¥350,000"
+        },
+        {
+          "name": "Jackie 1961",
+          "category": "ハンドバッグ",
+          "priceRange": "¥280,000 - ¥380,000"
+        }
+      ]
+    },
+    {
+      "name": "PRADA",
+      "slug": "prada",
+      "description": "1913年創業のイタリアのラグジュアリーブランド",
+      "country": "Italy",
+      "categories": ["バッグ", "財布", "シューズ", "アクセサリー"],
+      "popularProducts": [
+        {
+          "name": "Re-Edition 2005",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥150,000 - ¥200,000"
+        },
+        {
+          "name": "Galleria",
+          "category": "トートバッグ",
+          "priceRange": "¥300,000 - ¥400,000"
+        },
+        {
+          "name": "Cleo",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥250,000 - ¥320,000"
+        }
+      ]
+    },
+    {
+      "name": "DIOR",
+      "slug": "dior",
+      "description": "1946年創業のフランスの高級ファッションブランド",
+      "country": "France",
+      "categories": ["バッグ", "ジュエリー", "コスメ", "ウェア"],
+      "popularProducts": [
+        {
+          "name": "Lady Dior",
+          "category": "ハンドバッグ",
+          "priceRange": "¥500,000 - ¥700,000"
+        },
+        {
+          "name": "Book Tote",
+          "category": "トートバッグ",
+          "priceRange": "¥350,000 - ¥450,000"
+        },
+        {
+          "name": "Saddle Bag",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥380,000 - ¥480,000"
+        }
+      ]
+    },
+    {
+      "name": "SAINT LAURENT",
+      "slug": "saint-laurent",
+      "description": "1961年創業のフランスのラグジュアリーブランド",
+      "country": "France",
+      "categories": ["バッグ", "財布", "シューズ", "ウェア"],
+      "popularProducts": [
+        {
+          "name": "Loulou",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥250,000 - ¥350,000"
+        },
+        {
+          "name": "Kate",
+          "category": "クラッチバッグ",
+          "priceRange": "¥180,000 - ¥250,000"
+        },
+        {
+          "name": "Niki",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥280,000 - ¥380,000"
+        }
+      ]
+    },
+    {
+      "name": "BOTTEGA VENETA",
+      "slug": "bottega-veneta",
+      "description": "1966年創業のイタリアの高級レザーグッズブランド",
+      "country": "Italy",
+      "categories": ["バッグ", "財布", "シューズ", "アクセサリー"],
+      "popularProducts": [
+        {
+          "name": "Jodie",
+          "category": "ハンドバッグ",
+          "priceRange": "¥300,000 - ¥450,000"
+        },
+        {
+          "name": "Cassette",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥280,000 - ¥380,000"
+        },
+        {
+          "name": "Pouch",
+          "category": "クラッチバッグ",
+          "priceRange": "¥250,000 - ¥350,000"
+        }
+      ]
+    },
+    {
+      "name": "CELINE",
+      "slug": "celine",
+      "description": "1945年創業のフランスのラグジュアリーブランド",
+      "country": "France",
+      "categories": ["バッグ", "財布", "シューズ", "アクセサリー"],
+      "popularProducts": [
+        {
+          "name": "Luggage",
+          "category": "ハンドバッグ",
+          "priceRange": "¥350,000 - ¥500,000"
+        },
+        {
+          "name": "Triomphe",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥300,000 - ¥400,000"
+        },
+        {
+          "name": "Belt Bag",
+          "category": "ハンドバッグ",
+          "priceRange": "¥280,000 - ¥380,000"
+        }
+      ]
+    },
+    {
+      "name": "BALENCIAGA",
+      "slug": "balenciaga",
+      "description": "1917年創業のスペイン発祥のラグジュアリーブランド",
+      "country": "Spain/France",
+      "categories": ["バッグ", "シューズ", "ウェア", "アクセサリー"],
+      "popularProducts": [
+        {
+          "name": "City Bag",
+          "category": "ハンドバッグ",
+          "priceRange": "¥200,000 - ¥300,000"
+        },
+        {
+          "name": "Hourglass",
+          "category": "ハンドバッグ",
+          "priceRange": "¥250,000 - ¥350,000"
+        },
+        {
+          "name": "Le Cagole",
+          "category": "ショルダーバッグ",
+          "priceRange": "¥280,000 - ¥380,000"
+        }
+      ]
+    }
+  ],
+  "imageUrls": {
+    "placeholder": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&h=400&fit=crop",
+    "bags": [
+      "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1594633313593-bab3825d0caf?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=400&h=400&fit=crop"
+    ],
+    "wallets": [
+      "https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1624823824729-04df6d20b1ef?w=400&h=400&fit=crop"
+    ],
+    "shoes": [
+      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=400&h=400&fit=crop"
+    ],
+    "accessories": [
+      "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1569388330688-e7d9d5f1c9b0?w=400&h=400&fit=crop"
+    ]
+  }
+}

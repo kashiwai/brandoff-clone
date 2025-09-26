@@ -44,7 +44,7 @@ export default function ProductsPage() {
     if (!confirm(`「${name}」を削除してもよろしいですか？`)) return;
 
     try {
-      const response = await fetch(`/api/products/${id}`, {
+      const response = await fetch(`/api/admin/products/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) throw new Error('削除に失敗しました');

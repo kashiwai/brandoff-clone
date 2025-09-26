@@ -30,7 +30,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/products"
+              href="/collections"
               className="px-8 py-4 bg-white text-black hover:bg-gray-100 transition-all duration-300 font-medium tracking-wider uppercase"
             >
               コレクションを見る

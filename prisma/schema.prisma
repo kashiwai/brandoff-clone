@@ -159,11 +159,12 @@ model Image {
 
 model Order {
   id              String        @id @default(cuid())
+  orderNumber     String        @unique @default(cuid())
   userId          String?
   user            User?         @relation(fields: [userId], references: [id])
   email           String
   phone           String?
-  status          String        @default("PENDING")
+  status          String        @default("PENDING") // PENDING, PROCESSING, SHIPPED, DELIVERED, CANCELLED
   paymentStatus   String        @default("PENDING")
   paymentMethod   String?
   paymentIntentId String?
@@ -173,28 +174,32 @@ model Order {
   total           Float
   shippingAddress String
   billingAddress  String?
+  trackingNumber  String?
   notes           String?
   items           OrderItem[]
+  returns         Return[]      // 返品・交換リクエスト
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
 
   @@index([userId])
   @@index([status])
+  @@index([orderNumber])
   @@map("orders")
 }
 
 model OrderItem {
-  id        String   @id @default(cuid())
-  orderId   String
-  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  productId String
-  product   Product  @relation(fields: [productId], references: [id])
-  variantId String?
-  variant   Variant? @relation(fields: [variantId], references: [id])
-  price     Float
-  quantity  Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         String       @id @default(cuid())
+  orderId    String
+  order      Order        @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId  String
+  product    Product      @relation(fields: [productId], references: [id])
+  variantId  String?
+  variant    Variant?     @relation(fields: [variantId], references: [id])
+  price      Float
+  quantity   Int
+  returnItems ReturnItem[] // 返品アイテム
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
 
   @@index([orderId])
   @@index([productId])
@@ -260,3 +265,54 @@ model Wishlist {
   @@map("wishlists")
 }
 
+// 返品・交換管理
+model Return {
+  id             String        @id @default(cuid())
+  returnNumber   String        @unique @default(cuid())
+  orderId        String
+  order          Order         @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  type           String        // RETURN（返品） or EXCHANGE（交換）
+  status         String        @default("REQUESTED") // REQUESTED, APPROVED, REJECTED, SHIPPED, RECEIVED, COMPLETED, CANCELLED
+  reason         String        // 返品理由
+  description    String?       // 詳細説明
+
+  // 顧客情報
+  customerEmail  String
+  customerPhone  String?
+
+  // 返品ラベル情報
+  returnLabel    String?       // 返品ラベルURL
+  trackingNumber String?       // 追跡番号
+
+  // 承認情報
+  approvedBy     String?       // 承認者
+  approvedAt     DateTime?     // 承認日時
+  rejectedReason String?       // 却下理由
+  receivedAt     DateTime?     // 受領日時
+  completedAt    DateTime?     // 完了日時
+
+  returnItems    ReturnItem[]  // 返品アイテム
+
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([orderId])
+  @@index([status])
+  @@map("returns")
+}
+
+model ReturnItem {
+  id          String     @id @default(cuid())
+  returnId    String
+  return      Return     @relation(fields: [returnId], references: [id], onDelete: Cascade)
+  orderItemId String
+  orderItem   OrderItem  @relation(fields: [orderItemId], references: [id])
+  quantity    Int        // 返品数量
+  condition   String?    // 商品状態: NEW, OPENED, DAMAGED
+  notes       String?    // 備考
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([returnId])
+  @@map("return_items")
+}
